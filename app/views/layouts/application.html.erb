@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= current_user.name%>
+    <%else%>
+      <%= link_to 'Login with Facebook', auth_path(provider: 'facebook') %>
+    <%end%>
     <%= yield %>
   </body>
 </html>
