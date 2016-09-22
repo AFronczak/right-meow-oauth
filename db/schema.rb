@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922151057) do
+ActiveRecord::Schema.define(version: 20160922190717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160922151057) do
     t.string   "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "pet_types", force: :cascade do |t|
@@ -30,13 +32,21 @@ ActiveRecord::Schema.define(version: 20160922151057) do
 
   create_table "pets", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "pet_type_id"
+    t.index ["pet_type_id"], name: "index_pets_on_pet_type_id", using: :btree
+    t.index ["user_id"], name: "index_pets_on_user_id", using: :btree
   end
 
   create_table "specializations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "care_providers_id"
+    t.integer  "pet_types_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["care_providers_id"], name: "index_specializations_on_care_providers_id", using: :btree
+    t.index ["pet_types_id"], name: "index_specializations_on_pet_types_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,4 +61,6 @@ ActiveRecord::Schema.define(version: 20160922151057) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "pets", "pet_types"
+  add_foreign_key "pets", "users"
 end
