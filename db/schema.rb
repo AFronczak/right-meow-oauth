@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(version: 20160922190717) do
   end
 
   create_table "specializations", force: :cascade do |t|
-    t.integer  "care_providers_id"
-    t.integer  "pet_types_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-    t.index ["care_providers_id"], name: "index_specializations_on_care_providers_id", using: :btree
-    t.index ["pet_types_id"], name: "index_specializations_on_pet_types_id", using: :btree
+    t.integer  "care_provider_id"
+    t.integer  "pet_type_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["care_provider_id"], name: "index_specializations_on_care_provider_id", using: :btree
+    t.index ["pet_type_id"], name: "index_specializations_on_pet_type_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
