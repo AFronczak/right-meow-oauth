@@ -7,6 +7,8 @@ class SessionController < ApplicationController
   def create
     self.current_user = User.from_omniauth(request.env['omniauth.auth'])
 
+    # if user.pets.empty?
+    #   redirect_to user_edit
     if current_user
       redirect_to root_path
     else
