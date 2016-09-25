@@ -11,6 +11,7 @@
   <body>
     <% if logged_in? %>
       <%= current_user.name%>
+      <%= link_to "Sign out", logout_path%>
     <%else%>
       <%= link_to 'Login with Facebook', auth_path(provider: 'facebook') %>
     <%end%>

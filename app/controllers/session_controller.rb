@@ -9,7 +9,7 @@ class SessionController < ApplicationController
 
     if current_user
       if current_user.pets.empty?
-        redirect_to 
+        redirect_to edit_user_path(current_user.id)
       else
         redirect_to root_path
       end
