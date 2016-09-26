@@ -54,3 +54,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap-social-rails'
+gem 'font-awesome-rails'
+gem 'bootstrap-sass', '~> 3.2.0'

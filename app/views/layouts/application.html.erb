@@ -6,15 +6,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet">
   </head>
 
   <body>
-    <% if logged_in? %>
-      <%= current_user.name%>
-      <%= link_to "Sign out", logout_path%>
-    <%else%>
-      <%= link_to 'Login with Facebook', auth_path(provider: 'facebook') %>
-    <%end%>
-    <%= yield %>
+    <h1 class="headline">Right Meow!</h1>
+    <div class="container">
+      <div class="row">
+        <% if logged_in? %>
+          <%= current_user.name%>
+          <%= link_to "Sign out", logout_path%>
+        <%else%>
+          <%= link_to 'Login with Facebook', auth_path(provider: 'facebook') %>
+        <%end%>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

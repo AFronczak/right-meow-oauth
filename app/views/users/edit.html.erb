@@ -1,28 +1,29 @@
 <%= form_for @user do |f| %>
-  <form class="form-horizontal">
-    <fieldset>
-      <div class="form-group">
-        <div class="field">
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </div>
-        <div class="field">
-          <%= f.label :phone %>
-          <%= f.text_field :phone %>
-        </div>
-        <div class="found-definitions"></div>
-        <div class="field">
-          <%= f.label :address %>
-          <%= f.text_field :address %>
-        </div>
-        <div class="field">
-          <%= f.label :nickname %>
-          <%= f.text_field :nickname %>
-        </div>
-        <div class="actions">
-          <%= f.submit 'Submit' %>
-        </div>
-      </div>
-    </fieldset>
-  </form>
+  <div class="form-group row">
+    <%= f.label :name, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :phone, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :phone, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :address, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= f.label :nickname, class: "col-xs-2 col-form-label" %>
+    <div class="col-xs-10">
+      <%= f.text_field :nickname, class: "form-control" %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit' %>
+  </div>
 <%end%>
