@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:edit, :update]
+  resource :user, only: [:edit, :update]
   resources :care_providers
 
   root 'homepage#index'

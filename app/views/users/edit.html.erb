@@ -27,3 +27,19 @@
     <%= f.submit 'Submit' %>
   </div>
 <%end%>
+
+<div class="container">
+  <% @pets.each do |pet| %>
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <%= pet.name %>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <%= pet.type_of_pet %>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+      </div>
+    </div>
+  <% end %>
+</div>
