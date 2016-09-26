@@ -34,27 +34,27 @@ Specialization.create(care_provider: noah,
                       pet_type: fish)
 Specialization.create(care_provider: noah,
                       pet_type: small_mamal)
-# Specialization.create(care_provider: fourth,
-#                       pet_type_id: "1")
-# Specialization.create(care_provider: fourth,
-#                       pet_type_id: "3")
-# Specialization.create(care_provider: pets,
-#                       pet_type_id: "1")
-# Specialization.create(care_provider: pets,
-#                       pet_type_id: "4")
-# Specialization.create(care_provider: pets,
-#                       pet_type_id: "1")
-# Specialization.create(care_provider: haines,
-#                       pet_type_id: "5")
-# Specialization.create(care_provider: haines,
-#                       pet_type_id: "1")
-# Specialization.create(care_provider: haines,
-#                       pet_type_id: "2")
-# Specialization.create(care_provider: haines,
-#                       pet_type_id: "3")
-# Specialization.create(care_provider: haines,
-#                       pet_type_id: "4")
-# Specialization.create(care_provider: haines,
-#                       pet_type_id: "5")
-# Specialization.create(care_provider: haines,
-#                       pet_type_id: "6")
+Specialization.create(care_provider: fourth,
+                      pet_type_id: domestic)
+Specialization.create(care_provider: fourth,
+                      pet_type_id: exotic)
+Specialization.create(care_provider: pets,
+                      pet_type_id: domestic)
+Specialization.create(care_provider: pets,
+                      pet_type_id: fish)
+Specialization.create(care_provider: pets,
+                      pet_type_id: domestic)
+Specialization.create(care_provider: haines,
+                      pet_type_id: equestrian)
+Specialization.create(care_provider: haines,
+                      pet_type_id: domestic)
+Specialization.create(care_provider: haines,
+                      pet_type_id: avian)
+Specialization.create(care_provider: haines,
+                      pet_type_id: exotic)
+Specialization.create(care_provider: haines,
+                      pet_type_id: fish)
+Specialization.create(care_provider: haines,
+                      pet_type_id: equestrian)
+Specialization.create(care_provider: haines,
+                      pet_type_id: small_mammal)
