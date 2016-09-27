@@ -1,0 +1,13 @@
+.login_buttons {
+   padding: 10px;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+   align-content: space-between;
+   width: 250px;
+   margin: auto;
+
+   a {
+     margin: 20px 0;
+   }
+}

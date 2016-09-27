@@ -1,9 +1,15 @@
 <div class="text-center">
-  <h2 class="">
+  <h2 class="-">
     Sign Up for an account using facebook to find care for your animal Right Meow!
   </h2>
   <%= link_to 'Login with Facebook', auth_path(provider: 'facebook'), class: 'btn btn-block btn-social btn-facebook text-center'%>
   <a class="btn btn-block btn-social btn-facebook text-center">
     <span class="fa fa-facebook"><%= link_to 'Login with Facebook', auth_path(provider: 'facebook'), class: 'btn btn-block btn-social btn-facebook text-center fa fa-facebook'%>
   </a>
+  <div class="login_buttons">
+ <%= link_to auth_path(provider: 'facebook'), :class => "btn btn-social btn-facebook" do %>
+     <span class="fa fa-facebook"></span>
+     Sign in with Facebook
+ <% end %>
+ </div>
 </div>

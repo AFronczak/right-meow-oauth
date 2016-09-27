@@ -11,14 +11,19 @@
 
   <body>
     <div class="container">
-      <div class="row">
+      <div class="row flex-container">
         <div class="col-md-12">
           <h1 class="headline text-center">Right Meow!</h1>
         </div>
       </div>
+      <div class="col-xs-12">
+        <%= image_tag("grumpy-cat.svg", size: 50, class: "top-icon")%>
+      </div>
       <div class="row">
-        <div class="col-lg-2 side-icons">ICON</div>
-        <div class="col-lg-8 text-center main">
+        <div class="col-lg-2 col-md-1 side-icons container">
+          <%= image_tag("grumpy-cat.svg", size: 150)%>
+        </div>
+        <div class="col-lg-8 col-md-10 text-center main">
           <% if logged_in? %>
             Not
             <%= link_to "#{current_user.name}", edit_user_path %>?
@@ -27,7 +32,9 @@
           <%end%>
           <%= yield %>
         </div>
-        <div class="col-lg-2 side-icons">ICON</div>
+        <div class="col-lg-2 col-md-1 side-icons container">
+          <%= image_tag("building.svg", size: 150) %>
+        </div>
       </div>
     </div>
   </body>

@@ -14,6 +14,7 @@
  *= require_self
  */
 @import "_variables";
+@import "bootstrap/mixins";
 @import "bootstrap";
 @import "font-awesome";
 
@@ -21,21 +22,30 @@
 .headline {
   color: white;
   font-family: 'Merienda One', cursive;
-  height: 150px;
+  height: 100px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-around;
 }
 
 .top-icon {
-  display: none;
+  display: inline;
 }
 
-@media (max-width: $screen-sm-min) {
+@media (max-width: $screen-md-min) {
   .top-icon {
     display: inline;
   }
 
   .side-icons {
     display: none;
+
   }
+}
+
+.side-cat {
+  width: 150px;
 }
 
 body {
