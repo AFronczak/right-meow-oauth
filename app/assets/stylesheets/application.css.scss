@@ -13,10 +13,41 @@
  *= require_tree .
  *= require_self
  */
+@import "_variables";
 @import "bootstrap";
 @import "font-awesome";
 
 
 .headline {
+  color: white;
   font-family: 'Merienda One', cursive;
+  height: 150px;
+}
+
+.top-icon {
+  display: none;
+}
+
+@media (max-width: $screen-sm-min) {
+  .top-icon {
+    display: inline;
+  }
+
+  .side-icons {
+    display: none;
+  }
+}
+
+body {
+  background-color: #2196f3;
+}
+
+.main {
+  border: 5px solid lightblue;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: white;
+}
+.light-grey {
+  color: #8899AA;
 }

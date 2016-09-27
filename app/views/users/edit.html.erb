@@ -1,45 +1,56 @@
-<%= form_for @user do |f| %>
-  <div class="form-group row">
-    <%= f.label :name, class: "col-xs-2 col-form-label" %>
-    <div class="col-xs-10">
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group row">
-    <%= f.label :phone, class: "col-xs-2 col-form-label" %>
-    <div class="col-xs-10">
-      <%= f.text_field :phone, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group row">
-    <%= f.label :address, class: "col-xs-2 col-form-label" %>
-    <div class="col-xs-10">
-      <%= f.text_field :address, class: "form-control" %>
-    </div>
-  </div>
-  <div class="form-group row">
-    <%= f.label :nickname, class: "col-xs-2 col-form-label" %>
-    <div class="col-xs-10">
-      <%= f.text_field :nickname, class: "form-control" %>
-    </div>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit' %>
-  </div>
-<%end%>
 
-<div class="container">
-  <% @pets.each do |pet| %>
-    <div class="row">
-      <div class="col-xs-6 col-md-4">
-        <%= pet.name %>
+  <%= form_for (@user, :html => { :class => "form-horizontal"}) do |f| %>
+    <div class="form-group row">
+      <%= f.label :name, class: "col-xs-2 col-form-label" %>
+      <div class="col-xs-10">
+        <%= f.text_field :name, class: "form-control" %>
       </div>
-      <div class="col-xs-6 col-md-4">
-        <%= pet.type_of_pet %>
+    </div>
+    <div class="form-group row">
+      <%= f.label :phone, class: "col-xs-2 col-form-label" %>
+      <div class="col-xs-10">
+        <%= f.text_field :phone, class: "form-control" %>
       </div>
-      <div class="col-xs-6 col-md-4">
-        <i class="fa fa-trash-o" aria-hidden="true"></i>
+    </div>
+    <div class="form-group row">
+      <%= f.label :address, class: "col-xs-2 col-form-label" %>
+      <div class="col-xs-10">
+        <%= f.text_field :address, class: "form-control" %>
       </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :nickname, class: "col-xs-2 col-form-label" %>
+      <div class="col-xs-10">
+        <%= f.text_field :nickname, class: "form-control" %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Submit' %>
+    </div>
+  <%end%>
+
+
+<div class="user-pets">
+  <%= render @pets %>
+</div>
+<table class="table">
+  <%= form_for @pet, remote: true do |f| %>
+    <div class="form-group row">
+      <%= f.label :name, class: "col-xs-2 col-form-label" %>
+      <div class="col-xs-10">
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= f.label :pet_type_id, class: "col-xs-2 col-form-label" %>
+      <div class="col-xs-10">
+        <%= f.collection_select(:pet_type_id, PetType.all, :id, :type_of_pet, {prompt: "Choose a type of pet"}, {class: "form-control"}) %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Submit' %>
+
     </div>
   <% end %>
-</div>
+</table>

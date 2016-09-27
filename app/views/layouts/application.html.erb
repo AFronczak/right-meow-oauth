@@ -10,17 +10,25 @@
   </head>
 
   <body>
-    <h1 class="headline">Right Meow!</h1>
     <div class="container">
       <div class="row">
-        <% if logged_in? %>
-          <%= current_user.name%>
-          <%= link_to "Sign out", logout_path%>
-        <%else%>
-          <%= link_to 'Login with Facebook', auth_path(provider: 'facebook') %>
-        <%end%>
+        <div class="col-md-12">
+          <h1 class="headline text-center">Right Meow!</h1>
+        </div>
       </div>
-      <%= yield %>
+      <div class="row">
+        <div class="col-lg-2 side-icons">ICON</div>
+        <div class="col-lg-8 text-center main">
+          <% if logged_in? %>
+            Not
+            <%= link_to "#{current_user.name}", edit_user_path %>?
+            <%= link_to "Sign out", logout_path%>
+          <%else%>
+          <%end%>
+          <%= yield %>
+        </div>
+        <div class="col-lg-2 side-icons">ICON</div>
+      </div>
     </div>
   </body>
 </html>

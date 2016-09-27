@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def edit
     @user = current_user
     @pets = @user.pets
+    @pet = Pet.new
   end
 
   def update

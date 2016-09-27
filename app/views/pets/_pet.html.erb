@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-6 col-md-4">
+    <%= pet.name %>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <%= pet.type_of_pet %>
+  </div>
+  <div class="col-xs-6 col-md-4">
+    <i class="fa fa-trash-o" aria-hidden="true"></i>
+    <%=link_to 'delete', pet_path(pet), :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+  </div>
+</div>

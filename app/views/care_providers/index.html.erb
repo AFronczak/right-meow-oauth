@@ -11,7 +11,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'gavinstark.806a776b',
   accessToken: 'pk.eyJ1IjoiZ2F2aW5zdGFyayIsImEiOiIxZjVmODFhYWQ2NjIyZGY1MTQ5MzM3ZTE2MWNkMDkxMiJ9.HG1IbUfea4FfcJ0WrY7Pqg'
 }).addTo(map);
-<% @care_providers.each do |truck| %>
+<% @care_providers.each do |provider| %>
   var marker = L.marker([<%= truck.latitude %>, <%= truck.longitude %>]).addTo(map);
   marker.bindPopup('<%= link_to truck.name, truck_path(truck) %><br/><%= truck.location %><br/>');
 <% end %>

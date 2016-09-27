@@ -1,0 +1,28 @@
+<?xml version="1.0"?><svg width="2000" height="2000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>buildings</title>
+ <defs>
+  <linearGradient y2="-4.904279" x2="-0.703884" y1="-4.904279" x1="-0.703884" gradientTransform="matrix(0.851151, 0, 0, 0.368035, 31.3852, 1000.65)" id="linearGradient11109" xlink:href="#linearGradient7431-6-0-7"/>
+  <linearGradient id="linearGradient7431-6-0-7">
+   <stop stop-color="#ffffff" stop-opacity="0" id="stop7435-7-4-6" offset="0"/>
+   <stop stop-color="#ffffff" offset="1" id="stop7461-8-07-4"/>
+   <stop stop-color="#ffffff" offset="1" id="stop7459-9-90-2"/>
+  </linearGradient>
+ </defs>
+ <metadata id="metadata3877">image/svg+xmlbuildingsSergey Stepanovbuildinghousewww.time-systems.ru</metadata>
+ <g>
+  <title>Layer 1</title>
+  <g id="g9717">
+   <path fill="#e6e6e6" stroke="#666666" stroke-width="0.5" stroke-miterlimit="4" id="path5785-6" d="m89.02459,1257.97937l910.952339,361.25415l0,-1470.812103l-969.724754,335.451019l58.772415,774.106934z"/>
+   <path fill="#ff7f00" id="path5785-7-6" d="m811.618286,765.22998l0,-356.28363l-679.011765,197.37323l17.562958,184.18988l661.448807,-25.27948z"/>
+   <path fill="#ff7f00" id="path5785-7-8-8" d="m808.881042,1237.865479l0,-343.378418l-660.995285,-9.055359l17.565292,207.069519l643.429993,145.364258z"/>
+   <path fill="#a7a7a7" stroke="#666666" stroke-width="0.5" stroke-miterlimit="4" id="path5785-3-89" d="m1910.930054,1270.884521l-910.953125,361.250732l0,-1470.808868l969.724854,335.44754l-58.771729,774.110596z"/>
+   <path fill="#2e7fb8" id="path5785-7-83-8" d="m1849.786743,813.388977l-661.450439,-35.257446l0,-356.283569l690.378418,197.373169l-28.926514,194.167847l-0.001465,0z"/>
+   <path fill="#2e7fb8" id="path5785-7-8-7-7" d="m1191.075317,1250.76709l0,-343.381653l660.991333,-9.052124l-28.928101,207.069397l-632.063232,145.36438z"/>
+   <path fill="#e6e6e6" id="path5785-7-1-0-0" d="m334.078217,1211.662964l0,-756.10434l-45.306427,23.094513l6.733032,734.657898l38.573395,-1.648071l0,0l0,0z"/>
+   <path fill="#e6e6e6" id="path5785-7-1-0-4-7" d="m587.95166,1249.055298l0,-863.333984l-45.308716,26.397034l6.733093,838.588318l38.575623,-1.651367l0,0l0,0z"/>
+   <path fill="#a7a7a7" id="path5785-7-1-0-4-9-91" d="m1467.769043,1281.225342l0,-863.334259l-45.308594,26.393951l6.73291,838.588379l38.575684,-1.648071l0,0l0,0z"/>
+   <path fill="#a7a7a7" id="path5785-7-1-0-4-9-6-5" d="m1712.186401,1281.225342l0,-863.334259l-45.308716,26.393951l6.731323,838.588379l38.577393,-1.648071l0,0l0,0z"/>
+  </g>
+  <rect opacity="0.637931" fill="url(#linearGradient11109)" id="rect7441-6-3-8" width="101.36349" height="45.340633" x="315.894653" y="142.989855" ry="22.670317"/>
+ </g>
+</svg>

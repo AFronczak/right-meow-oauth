@@ -11,7 +11,7 @@ class SessionController < ApplicationController
       if current_user.pets.empty?
         redirect_to edit_user_path(current_user.id)
       else
-        redirect_to root_path
+        redirect_to care_providers_path
       end
     else
       redirect_to login_path
