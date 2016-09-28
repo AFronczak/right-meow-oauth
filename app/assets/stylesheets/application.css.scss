@@ -13,16 +13,15 @@
  *= require_tree .
  *= require_self
  */
-@import "_variables";
-@import "bootstrap/mixins";
+@import "variables";
 @import "bootstrap";
 @import "font-awesome";
-
+@import "bootswatch";
 
 .headline {
   color: white;
   font-family: 'Merienda One', cursive;
-  height: 100px;
+  margin: 50px;
 }
 .flex-container {
   display: flex;
@@ -30,7 +29,7 @@
 }
 
 .top-icon {
-  display: inline;
+  display: none;
 }
 
 @media (max-width: $screen-md-min) {
@@ -40,12 +39,15 @@
 
   .side-icons {
     display: none;
-
+  }
+  .forms-margin {
+    margin: 10px;
   }
 }
 
 .side-cat {
   width: 150px;
+  margin-top: 150px;
 }
 
 body {
@@ -60,4 +62,15 @@ body {
 }
 .light-grey {
   color: #8899AA;
+}
+
+.user-pet {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.forms-margin {
+  margin: 50px;
+}
+.button-left {
+  text-align: left;
 }

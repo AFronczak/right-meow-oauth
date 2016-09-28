@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/mkhairi/bootswatch-sass.git
+  revision: 51cbc8bb3d95c1bc3b96990555eb279161982490
+  specs:
+    bootswatch-sass (3.3.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -191,6 +197,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   bootstrap-social-rails
   bootswatch-rails (~> 3.3, >= 3.3.5)
+  bootswatch-sass!
   byebug
   coffee-rails (~> 4.2)
   dotenv-rails

@@ -11,8 +11,20 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
   id: 'gavinstark.806a776b',
   accessToken: 'pk.eyJ1IjoiZ2F2aW5zdGFyayIsImEiOiIxZjVmODFhYWQ2NjIyZGY1MTQ5MzM3ZTE2MWNkMDkxMiJ9.HG1IbUfea4FfcJ0WrY7Pqg'
 }).addTo(map);
+
+var myIcon = L.icon({
+  iconUrl: '<%= image_path("marker.svg") %>',
+    iconRetinaUrl: '<%= image_path("marker.svg") %>',
+    iconSize: [38, 38]
+});
+
 <% @care_providers.each do |provider| %>
-  var marker = L.marker([<%= truck.latitude %>, <%= truck.longitude %>]).addTo(map);
-  marker.bindPopup('<%= link_to truck.name, truck_path(truck) %><br/><%= truck.location %><br/>');
+  var marker = L.marker([<%= provider.latitude %>, <%= provider.longitude %>], {icon: myIcon}).addTo(map);
+  marker.bindPopup('<%= link_to provider.name, provider %><br/><%= provider.address %><br/>');
 <% end %>
 </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+
+<div id="map"></div>

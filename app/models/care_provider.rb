@@ -3,8 +3,8 @@ class CareProvider < ApplicationRecord
   has_many :pet_types, through: :specializations
 
   validates :name, presence: true
-  validates :location, presence: true
+  validates :address, presence: true
 
-  geocoded_by :location
+  geocoded_by :address
   after_validation :geocode
 end

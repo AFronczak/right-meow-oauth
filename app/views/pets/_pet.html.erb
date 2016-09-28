@@ -1,12 +1,10 @@
 <div class="row">
-  <div class="col-xs-6 col-md-4">
-    <%= pet.name %>
+  <ul class="breadcrumb user-pet">
+    <li><a href="#"><%= pet.name %></a></li>
+    <li><a href="#"><%= pet.type_of_pet %></a></li>
+    <li>
+      <%=link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, pet_path(pet), :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+    </li>
+  </ul>
+
   </div>
-  <div class="col-xs-6 col-md-4">
-    <%= pet.type_of_pet %>
-  </div>
-  <div class="col-xs-6 col-md-4">
-    <i class="fa fa-trash-o" aria-hidden="true"></i>
-    <%=link_to 'delete', pet_path(pet), :method => :delete, :data => { :confirm => 'Are you sure?'} %>
-  </div>
-</div>

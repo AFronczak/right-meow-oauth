@@ -11,7 +11,7 @@ avian = PetType.create(type_of_pet: "Avian")
 exotic = PetType.create(type_of_pet: "Exotic")
 fish = PetType.create(type_of_pet: "Fish")
 equestrian = PetType.create(type_of_pet: "Equestrian")
-small_mamal = PetType.create(type_of_pet: "Small Mammal")
+small_mammal = PetType.create(type_of_pet: "Small Mammal")
 
 # careproviders will need more!
 noah = CareProvider.create(name: "North East Animal Hospital",
@@ -33,7 +33,7 @@ haines = CareProvider.create(name: "Haines Road Animal Hospital",
 Specialization.create(care_provider: noah,
                       pet_type: fish)
 Specialization.create(care_provider: noah,
-                      pet_type: small_mamal)
+                      pet_type: small_mammal)
 Specialization.create(care_provider: fourth,
                       pet_type_id: domestic)
 Specialization.create(care_provider: fourth,

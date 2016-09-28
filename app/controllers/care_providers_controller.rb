@@ -5,8 +5,7 @@ class CareProvidersController < ApplicationController
   # GET /care_providers.json
   def index
     # @care_providers = CareProvider.all
-    @care_providers = CareProvider.where.not(latitude: nil).where.not(longitude: nil)
-
+    @care_providers = CareProvider.all
   end
 
   # GET /care_providers/1
