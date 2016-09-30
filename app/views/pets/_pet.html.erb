@@ -1,7 +1,7 @@
 <div class="row">
   <ul class="breadcrumb user-pet">
     <li><a href="#"><%= pet.name %></a></li>
-    <li><a href="#"><%= pet.type_of_pet %></a></li>
+    <li><a href="#"><%= pet.pet_type_name %></a></li>
     <li>
       <%=link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, pet_path(pet), :method => :delete, :data => { :confirm => 'Are you sure?'} %>
     </li>

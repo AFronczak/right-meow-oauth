@@ -10,31 +10,30 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row flex-container">
         <div class="col-md-12">
           <h1 class="headline text-center m-x-auto">Right Meow!</h1>
         </div>
       </div>
-      <div class="col-xs-12">
-        <%= image_tag("grumpy-cat.svg", size: 50, class: "top-icon")%>
-      </div>
       <div class="row">
         <div class="col-lg-2 col-md-2 side-icons container">
-          <%= image_tag("rightmeow_illustration.png", size: 150)%>
+          <%= image_tag("rightmeow_fullcat.png")%>
         </div>
         <div class="col-lg-8 col-md-8 text-center main">
-          <% if logged_in? %>
-            Not
-            <%= link_to "#{current_user.name}", edit_user_path %>?
-            <%= link_to "Sign out", logout_path%>
-          <%else%>
-          <%end%>
           <%= image_tag("rightmeow_illustration.png", class: "top-icon", size: 150)%>
+          <div class="logged-in">
+            <% if logged_in? %>
+              Not
+              <%= link_to "#{current_user.name}", edit_user_path %>?
+              <%= link_to "Sign out", logout_path%>
+            <%else%>
+            <%end%>
+          </div>
           <%= yield %>
         </div>
         <div class="col-lg-2 col-md-2 side-icons container">
-          <%= image_tag("building.svg", size: 150) %>
+          <%= image_tag("rightmeow_hospitalshade.png") %>
         </div>
       </div>
     </div>

@@ -3,13 +3,14 @@ class UsersController < ApplicationController
     @user = current_user
     @pets = @user.pets
     @pet = Pet.new
+    # redirect_to care_providers_path
   end
 
   def update
     @user = current_user
 
     if @user.update(user_params)
-      redirect_to root_path
+      redirect_to care_providers_path
     else
       render :edit
     end

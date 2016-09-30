@@ -17,17 +17,21 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "bootswatch";
+@import "map";
 
 .headline {
   color: white;
   font-family: 'Merienda One', cursive;
   margin: 50px;
+  font-size: 55px;
 }
 .flex-container {
   display: flex;
   justify-content: space-around;
 }
-
+.logged-in {
+  margin: 20px;
+}
 .top-icon {
   display: none;
 }
@@ -46,8 +50,8 @@
 }
 
 .side-cat {
-  width: 150px;
   margin-top: 150px;
+  padding: 0;
 }
 
 body {
@@ -73,4 +77,10 @@ body {
 }
 .button-left {
   text-align: left;
+}
+
+.side-icons {
+  img {
+    width: 100%;
+  }
 }

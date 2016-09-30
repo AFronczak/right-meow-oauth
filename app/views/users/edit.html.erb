@@ -39,7 +39,7 @@
 </div>
 <h4>Add Pets</h4>
 <hr>
-  <%= form_for @pet, remote: true do |f| %>
+  <%= form_for @pet, { remote: true, html: { class: "forms-margin form" } } do |f| %>
     <div class="form-group row">
       <%= f.label :name, class: "col-xs-2 col-form-label" %>
       <div class="col-xs-10">

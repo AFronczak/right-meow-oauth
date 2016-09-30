@@ -4,6 +4,7 @@ class CareProvider < ApplicationRecord
 
   validates :name, presence: true
   validates :address, presence: true
+  validates :website, presence: true
 
   geocoded_by :address
   after_validation :geocode
