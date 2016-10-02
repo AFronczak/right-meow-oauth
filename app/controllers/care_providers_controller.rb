@@ -5,16 +5,11 @@ class CareProvidersController < ApplicationController
   # GET /care_providers.json
   def index
     # @care_providers = CareProvider.all
+    # @ip = request.remote_ip
+    @ip = "108.190.18.85"
+    @user_location = Geocoder.search(@ip)
     @care_providers = CareProvider.where.not(latitude: nil).where.not(longitude: nil)
     @user = current_user
-    def remote_ip
-      if request.remote_ip == '127.0.0.1'
-        # Hard coded remote address
-        '123.45.67.89'
-      else
-        request.remote_ip
-      end
-    end
   end
 
   # GET /care_providers/1

@@ -7,21 +7,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
     <div class="container-fluid">
       <div class="row flex-container">
         <div class="col-md-12">
-          <h1 class="headline text-center m-x-auto">Right Meow!</h1>
+          <%= image_tag("rightmeow_catface.png", size: '150', class: "top-icon")%>
+
+          <h1 class="headline">Right Meow!</h1>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-2 col-md-2 side-icons container">
-          <%= image_tag("rightmeow_fullcat.png")%>
-        </div>
-        <div class="col-lg-8 col-md-8 text-center main">
-          <%= image_tag("rightmeow_illustration.png", class: "top-icon", size: 150)%>
+        <div class="col-lg-12 text-center main">
           <div class="logged-in">
             <% if logged_in? %>
               Not
@@ -31,9 +30,6 @@
             <%end%>
           </div>
           <%= yield %>
-        </div>
-        <div class="col-lg-2 col-md-2 side-icons container">
-          <%= image_tag("rightmeow_hospitalshade.png") %>
         </div>
       </div>
     </div>

@@ -30,31 +30,32 @@
     </div>
   <%end%>
 
-<h4>Your Pets</h4>
-<hr>
-<div class="user-pets">
-  <div class="">
-    <%= render @pets %>
-  </div>
-</div>
 <h4>Add Pets</h4>
 <hr>
-  <%= form_for @pet, { remote: true, html: { class: "forms-margin form" } } do |f| %>
-    <div class="form-group row">
-      <%= f.label :name, class: "col-xs-2 col-form-label" %>
-      <div class="col-xs-10">
-        <%= f.text_field :name, class: "form-control" %>
+<div class="pet-container">
+  <div class="pet-form">
+    <%= render @pets %>
+    <%= form_for @pet, { remote: true, html: { class: "forms-margin form" } } do |f| %>
+      <div class="form-group row">
+        <%= f.label :name, class: "col-xs-2 col-form-label" %>
+        <div class="col-xs-10">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <%= f.label :pet_type_id, class: "col-xs-2 col-form-label" %>
-      <div class="col-xs-10">
-        <%= f.collection_select(:pet_type_id, PetType.all, :id, :type_of_pet, {prompt: "Choose a type of pet"}, {class: "form-control"}) %>
+      <div class="form-group row">
+        <%= f.label :pet_type_id, class: "col-xs-2 col-form-label" %>
+        <div class="col-xs-10">
+          <%= f.collection_select(:pet_type_id, PetType.all, :id, :type_of_pet, {prompt: "Choose a type of pet"}, {class: "form-control"}) %>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-md-2">
-        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <div class="form-group row">
+        <div class="col-md-2">
+          <%= f.submit 'Submit', class: 'btn btn-primary' %>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="right-meow-container">
+
+  </div>
+</div>

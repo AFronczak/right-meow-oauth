@@ -1,39 +1,45 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-
-<div id="map"></div>
-
 <script>
-var map = L.map('map').setView([27.768, -82.633], 10);
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-  maxZoom: 18,
-  id: 'gavinstark.806a776b',
-  accessToken: 'pk.eyJ1IjoiZ2F2aW5zdGFyayIsImEiOiIxZjVmODFhYWQ2NjIyZGY1MTQ5MzM3ZTE2MWNkMDkxMiJ9.HG1IbUfea4FfcJ0WrY7Pqg'
-}).addTo(map);
+$(document).ready(function() {
+  var map = L.map('map').setView([27.768, -82.633], 10);
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+    touchZoom: false,
+    id: 'gavinstark.806a776b',
+    accessToken: 'pk.eyJ1IjoiZ2F2aW5zdGFyayIsImEiOiIxZjVmODFhYWQ2NjIyZGY1MTQ5MzM3ZTE2MWNkMDkxMiJ9.HG1IbUfea4FfcJ0WrY7Pqg'
+  }).addTo(map);
 
-var myIcon = L.icon({
-  iconUrl: '<%= image_path("marker2.svg") %>',
-    iconRetinaUrl: '<%= image_path("marker2.svg") %>',
-    iconSize: [38, 38]
-});
+  var myIcon = L.icon({
+    iconUrl: '<%= image_path("marker2.svg") %>',
+      iconRetinaUrl: '<%= image_path("marker2.svg") %>',
+      iconSize: [38, 38]
+  });
 
-<% current_user.care_providers.distinct.each do |provider| %>
-  var marker = L.marker([<%= provider.latitude %>, <%= provider.longitude %>], {icon: myIcon}).addTo(map);
-  marker.bindPopup('<%= link_to provider.name, provider %><br/><%= provider.address %><br/><%= provider.website %>');
-<% end %>
+  <% current_user.care_providers.distinct.each do |provider| %>
+    var marker = L.marker([<%= provider.latitude %>, <%= provider.longitude %>], {icon: myIcon}).addTo(map);
+    marker.bindPopup('<%= link_to provider.name, provider %><br/><%= provider.address %><br/><%= provider.website %>');
+  <% end %>
+})
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
-
-<div class="list-group">
-  <a class="list-group-item active">
-    Nearby Providers
-  </a>
-  <% current_user.care_providers.distinct.each do |provider| %>
-  <a href="#" class="list-group-item">
-    <%= provider.website %>
-  </a>
-  <% end %>
+<div class="row">
+  <div class="col-lg-6">
+    <div id="map"></div>
+  </div>
+  <%= @user_location %>
+  <div class="col-lg-6">
+    <div class="list-group">
+      <a class="list-group-item active">
+        Nearby Providers
+      </a>
+      <% current_user.care_providers.distinct.each do |provider| %>
+          <%= link_to "#{provider.name}", provider.website, class: "list-group-item" %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
