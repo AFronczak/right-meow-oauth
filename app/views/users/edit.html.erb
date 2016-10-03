@@ -1,4 +1,5 @@
-  <%= form_for @user, {:html => {:class => "forms-margin form"}} do |f| %>
+<hr>
+  <%= form_for @user, {:html => {:class => "forms-margin form user_edit"}} do |f| %>
     <div class="form-group row">
       <%= f.label :name, class: "col-md-2 col-form-label" %>
       <div class="col-md-10">
@@ -23,39 +24,42 @@
         <%= f.text_field :nickname, class: "form-control" %>
       </div>
     </div>
-    <div class="form-group row">
-      <div class="col-md-2">
-        <%= f.submit 'Submit', class: 'btn btn-primary' %>
-      </div>
-    </div>
   <%end%>
 
-<h4>Add Pets</h4>
-<hr>
-<div class="pet-container">
-  <div class="pet-form">
-    <%= render @pets %>
-    <%= form_for @pet, { remote: true, html: { class: "forms-margin form" } } do |f| %>
-      <div class="form-group row">
-        <%= f.label :name, class: "col-xs-2 col-form-label" %>
-        <div class="col-xs-10">
-          <%= f.text_field :name, class: "form-control" %>
+  <div class="form-group row forms-margin">
+    <div class="col-md-2">
+      <label class="col-form-label">Pets</label>
+    </div>
+    <div class="col-md-10">
+      <div class="pet-container row well">
+        <div class="pet-form col-lg-8 col-md-8">
+          <ul class="list-group user-pets">
+            <%= render @pets %>
+          </ul>
+          <%= form_for @pet, { remote: true, html: { class: "form-inline form" } } do |f| %>
+            <div class="form-group">
+              <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+            </div>
+            <div class="form-group">
+                <%= f.collection_select(:pet_type_id, PetType.all, :id, :type_of_pet, {prompt: "Choose a type of pet"}, {class: "form-control"}) %>
+            </div>
+            <div class="form-group">
+                <%= f.submit 'Add', class: 'btn btn-default pull-right' %>
+            </div>
+          <% end %>
+        </div>
+        <div class="right-meow-container col-lg-3 col-md-3 side-icons">
+          <%= image_tag "rightmeow_fullcat.png"%>
         </div>
       </div>
-      <div class="form-group row">
-        <%= f.label :pet_type_id, class: "col-xs-2 col-form-label" %>
-        <div class="col-xs-10">
-          <%= f.collection_select(:pet_type_id, PetType.all, :id, :type_of_pet, {prompt: "Choose a type of pet"}, {class: "form-control"}) %>
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-md-2">
-          <%= f.submit 'Submit', class: 'btn btn-primary' %>
-        </div>
-      </div>
-    <% end %>
+    </div>
   </div>
-  <div class="right-meow-container">
 
+  <div class="form-group row">
+    <div class="col-md-2">
+      <a href='#' class="btn btn-primary user-form-submit">Save</a>
+    </div>
+    <div class="col-md-2">
+      <a href='#' class="btn btn-info user-form-submit">Show Providers</a>
+    </div>
   </div>
-</div>

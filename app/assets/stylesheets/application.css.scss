@@ -18,6 +18,7 @@
 @import "font-awesome";
 @import "bootswatch";
 @import "map";
+@import "cloud";
 
 .headline {
   color: white;
@@ -25,6 +26,7 @@
   margin: 50px;
   font-size: 55px;
   text-align: center;
+  white-space: nowrap
 }
 .flex-container {
   display: flex;
@@ -38,12 +40,13 @@
 }
 .sign-up-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   min-height: 300px;
 }
 @media (max-width: $screen-md-min) {
   .top-icon {
     display: inline;
+    text-align: center;
   }
 
   .side-icons {
@@ -89,14 +92,21 @@ body {
   margin-right: 50px;
 }
 .forms-margin {
-  margin: 50px;
+  margin: 50px 50px 0 50px;
 }
 .button-left {
   text-align: left;
 }
 
+.hospital {
+  padding: 0;
+}
 .side-icons {
   img {
     width: 100%;
   }
+}
+
+.user-pets .list-group-item {
+  background: transparent;
 }

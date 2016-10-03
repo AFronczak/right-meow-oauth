@@ -7,9 +7,16 @@ class CareProvidersController < ApplicationController
     # @care_providers = CareProvider.all
     # @ip = request.remote_ip
     @ip = "108.190.18.85"
-    @user_location = Geocoder.search(@ip)
-    @care_providers = CareProvider.where.not(latitude: nil).where.not(longitude: nil)
-    @user = current_user
+
+    geocoded = Geocoder.search(@ip).first
+    if geocoded
+      @lat = geocoded.latitude
+      @lng = geocoded.longitude
+    else
+      @lat = 27.7723
+      @lng = -82.6341
+    end
+    @care_providers = current_user.care_providers.near([@lat, @lng], 50, {order: "distance"}).distinct
   end
 
   # GET /care_providers/1

@@ -12,7 +12,7 @@ avian = PetType.create(type_of_pet: "Avian")
 exotic = PetType.create(type_of_pet: "Exotic")
 fish = PetType.create(type_of_pet: "Fish")
 equestrian = PetType.create(type_of_pet: "Equestrian")
-small_mammal = PetType.create(type_of_pet: "Small Mammal")
+small_mammal = PetType.create(type_of_pet: "Small_Mammal")
 
 # careproviders will need more!
 noah = CareProvider.create(name: "North East Animal Hospital",

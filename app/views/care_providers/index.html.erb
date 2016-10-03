@@ -1,19 +1,28 @@
 <script>
 $(document).ready(function() {
-  var map = L.map('map').setView([27.768, -82.633], 10);
+  var lat = <%= @lat %>;
+  var lng = <%= @lng %>;
+
+  var map = L.map('map').setView([lat, lng], 10);
+  map.scrollWheelZoom.disable();
+  // map.once('focus', function() { map.scrollWheelZoom.enable(); });
+
+
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     maxZoom: 18,
     touchZoom: false,
-    id: 'gavinstark.806a776b',
-    accessToken: 'pk.eyJ1IjoiZ2F2aW5zdGFyayIsImEiOiIxZjVmODFhYWQ2NjIyZGY1MTQ5MzM3ZTE2MWNkMDkxMiJ9.HG1IbUfea4FfcJ0WrY7Pqg'
+    id: 'mapbox.emerald',
+    accessToken: 'pk.eyJ1IjoiYWZyb25jemFrIiwiYSI6ImNpdHQzM2d2ejA0eTIydG9icmtldm12Y3kifQ.jcj9k_1lKepTanCSvOVDEw'
   }).addTo(map);
+
 
   var myIcon = L.icon({
     iconUrl: '<%= image_path("marker2.svg") %>',
       iconRetinaUrl: '<%= image_path("marker2.svg") %>',
       iconSize: [38, 38]
   });
+
 
   <% current_user.care_providers.distinct.each do |provider| %>
     var marker = L.marker([<%= provider.latitude %>, <%= provider.longitude %>], {icon: myIcon}).addTo(map);
@@ -22,19 +31,76 @@ $(document).ready(function() {
 })
 </script>
 
+
+
 <div class="row">
   <div class="col-lg-6">
     <div id="map"></div>
   </div>
-  <%= @user_location %>
   <div class="col-lg-6">
-    <div class="list-group">
-      <a class="list-group-item active">
-        Nearby Providers
-      </a>
-      <% current_user.care_providers.distinct.each do |provider| %>
-          <%= link_to "#{provider.name}", provider.website, class: "list-group-item" %>
-      <% end %>
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title">Nearby Providers</h3>
+      </div>
+      <div class="panel-body">
+        <% @care_providers.each do |provider| %>
+          <a class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>"><%= provider.name %><span class="badge"><%= number_with_precision(provider.distance, precision: 2) %> mi </span></a>
+
+
+
+          <div class="modal fade" id="provider-<%= provider.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel"><%= provider.name %></h4>
+                </div>
+                <div class="modal-body">
+                  Website:
+                  <%= link_to provider.website %>
+                    <br>
+                  Phone:
+                  <%= provider.phone %>
+                    <br>
+                  Address:
+                  <%= provider.address%>
+                  <br>
+                  Specializations:
+                  <% provider.pet_types.uniq.each do |type| %>
+                    <%= image_tag("animals/svg/#{type.type_of_pet.tableize.singularize}.svg", size: 20) %>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+<!-- here goes the modal code! -->
+
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
 </div>
