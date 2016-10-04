@@ -61,5 +61,7 @@
     </div>
     <div class="col-md-1">
       <%= link_to "/care_providers", :html => { :class => "btn btn-info right-btn" } %>
+      <%= button_to "See Care Providers", care_provider_path,
+      :class => "btn btn-info right-btn", :method => :get %>
     </div>
   </div>
