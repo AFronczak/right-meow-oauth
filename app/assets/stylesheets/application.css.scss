@@ -19,29 +19,28 @@
 @import "bootswatch";
 @import "map";
 
+$background-color: #2196f3;
+
 .headline {
   color: white;
   font-family: 'Merienda One', cursive;
   margin: 50px;
   font-size: 55px;
-  text-align: center;
   white-space: nowrap
 }
-.flex-container {
-  display: flex;
-  justify-content: space-around;
-}
+
 .logged-in {
   margin: 20px;
 }
 .top-icon {
   display: none;
 }
-.sign-up-container {
-  display: flex;
-  justify-content: center;
+.sign-up-container-left, .sign-up-container-right {
+  vertical-align: middle;
   min-height: 300px;
+  align-items: center;
 }
+
 @media (max-width: $screen-md-min) {
   .top-icon {
     display: inline;
@@ -73,15 +72,19 @@
 }
 
 body {
-  background-color: #2196f3;
+  background-color: $background-color;
+}
+
+.footer {
+  color: white;
+  height: 100px;
 }
 
 .main {
   border: 5px solid lightblue;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-radius: 25px;
   background-color: white;
-}
+  }
 .light-grey {
   color: #8899AA;
 }
@@ -105,7 +108,24 @@ body {
     width: 100%;
   }
 }
-
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
 .user-pets .list-group-item {
   background: transparent;
+}
+.left-btn {
+  margin-right: 0;
+}
+.right-btn {
+  margin-left: 0;
+}
+.footer-align {
+  color: white;
+}
+body.logged-in {
+}
+
+body.logged-out {
 }

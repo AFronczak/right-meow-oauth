@@ -1,16 +1,18 @@
 <div class="row">
-  <div class="col-lg-6 sign-up-container">
-    <%= image_tag("rightmeow_hospital_white.svg", height: 300, class: "hospital") %>
+  <div class="col-md-6 sign-up-container-left text-center">
+    <%= image_tag("rightmeow_hospital_white.svg", height: "30%", class: "hospital") %>
   </div>
-  <div class="col-lg-6 sign-up-container">
-    <h1>
-      Sign Up for an account using facebook to find care for your animal Right Meow!
-    </h1>
-    <div class="login_buttons">
-      <%= link_to auth_path(provider: 'facebook'), :class => "btn btn-block' btn-social btn-facebook" do %>
-         <span class="fa fa-facebook"></span>
-         Sign in with Facebook
-       <% end %>
+  <div class="col-md-6 sign-up-container-right flex-container">
+    <div class="">
+      <h3>
+        Sign Up for an account using facebook to find care for your animal Right Meow!
+      </h3>
+      <div class="login_buttons text-center">
+        <%= link_to auth_path(provider: 'facebook'), :class => "btn btn-block' btn-social btn-facebook" do %>
+           <span class="fa fa-facebook"></span>
+           Sign in with Facebook
+         <% end %>
+      </div>
     </div>
   </div>
 </div>
