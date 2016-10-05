@@ -30,9 +30,6 @@ $background-color: #2196f3;
   white-space: nowrap
 }
 
-.logged-in {
-  margin: 20px;
-}
 .top-icon {
   display: none;
 }
@@ -54,6 +51,9 @@ $background-color: #2196f3;
   .top-icon {
     display: inline;
     text-align: center;
+  }
+  .body {
+    margin: 0;
   }
   .forms-margin {
     margin: 0;
