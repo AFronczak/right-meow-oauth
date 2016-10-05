@@ -44,7 +44,7 @@ $(document).ready(function() {
       </div>
       <div class="panel-body">
         <% @care_providers.each do |provider| %>
-          <a class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>"><%= provider.name %><span class="badge"><%= number_with_precision(provider.distance, precision: 2) %> mi </span></a>
+          <a class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>"><%= provider.name %><span class="badge", display="inline-block"><%= number_with_precision(provider.distance, precision: 2) %> mi </span></a>
 
 
 

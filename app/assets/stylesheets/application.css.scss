@@ -77,7 +77,8 @@ $background-color: #2196f3;
 }
 @media (max-width: $screen-sm-min) {
   .headline {
-    margin-bottom: 15px;
+    margin:0 0 15px 0;
+
   }
 
 }
