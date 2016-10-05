@@ -44,6 +44,12 @@ $background-color: #2196f3;
 .forms-margin {
   margin: 50px 50px 0 50px;
 }
+
+.main {
+  border: 5px solid lightblue;
+  border-radius: 25px;
+  background-color: white;
+  }
 @media (max-width: $screen-md-min) {
   .top-icon {
     display: inline;
@@ -52,7 +58,9 @@ $background-color: #2196f3;
   .forms-margin {
     margin: 0;
   }
-
+  .main {
+    border-radius: 0;
+  }
   .side-icons {
     display: none;
   }
@@ -87,11 +95,6 @@ body {
   height: 100px;
 }
 
-.main {
-  border: 5px solid lightblue;
-  border-radius: 25px;
-  background-color: white;
-  }
 .light-grey {
   color: #8899AA;
 }
