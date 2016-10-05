@@ -16,11 +16,18 @@ $(document).ready(function() {
     accessToken: 'pk.eyJ1IjoiYWZyb25jemFrIiwiYSI6ImNpdHQzM2d2ejA0eTIydG9icmtldm12Y3kifQ.jcj9k_1lKepTanCSvOVDEw'
   }).addTo(map);
 
+  // Home marker
+  var homeIcon = L.icon({
+    iconUrl: '<%= image_path("marker2.svg") %>',
+    iconRetinaUrl: '<%= image_path("marker2.svg") %>',
+    iconSize: [38, 38]
+  });
+  L.marker([lat, lng], {icon: homeIcon}).addTo(map);
 
   var myIcon = L.icon({
     iconUrl: '<%= image_path("marker2.svg") %>',
-      iconRetinaUrl: '<%= image_path("marker2.svg") %>',
-      iconSize: [38, 38]
+    iconRetinaUrl: '<%= image_path("marker2.svg") %>',
+    iconSize: [38, 38]
   });
 
 
@@ -44,7 +51,10 @@ $(document).ready(function() {
       </div>
       <div class="panel-body">
         <% @care_providers.each do |provider| %>
-          <a class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>"><%= provider.name %><span class="badge", display="inline-block"><%= number_with_precision(provider.distance, precision: 2) %> mi </span></a>
+          <a class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>">
+            <span class="list-group-provider-name"><%= provider.name %></span>
+            <span class="badge"><%= number_with_precision(provider.distance, precision: 2) %> mi </span>
+          </a>
 
 
 

@@ -24,7 +24,7 @@ $background-color: #2196f3;
 .headline {
   color: white;
   font-family: 'Merienda One', cursive;
-  margin: 50px;
+  margin: 15px;
   font-size: 55px;
   padding: 10px;
   white-space: nowrap
@@ -38,9 +38,8 @@ $background-color: #2196f3;
   align-items: center;
 }
 .sign-up-container-left {
-  img {
-    margin: auto;
-  }
+  display: flex;
+  justify-content: space-around;
 }
 .forms-margin {
   margin: 15px 15px 0 15px;
@@ -58,6 +57,11 @@ $background-color: #2196f3;
 }
 
 @media (max-width: $screen-md-min) {
+  .list-group-provider-name {
+    display: inline-block;
+    width: 60%;
+  }
+
   .top-icon {
     display: inline;
     text-align: center;
