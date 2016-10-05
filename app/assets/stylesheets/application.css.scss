@@ -34,9 +34,13 @@ $background-color: #2196f3;
   display: none;
 }
 .sign-up-container-left, .sign-up-container-right {
-  vertical-align: middle;
   min-height: 300px;
   align-items: center;
+}
+.sign-up-container-left {
+  img {
+    margin: auto;
+  }
 }
 .forms-margin {
   margin: 15px 15px 0 15px;
