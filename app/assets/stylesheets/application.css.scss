@@ -88,12 +88,25 @@ $background-color: #2196f3;
     display: block;
     min-height: 150px;
   }
+  .sign-up-container-left {
+    min-height: 200px;
+  }
+  .sign-up-container-right {
+    min-height: 200px;
+  }
 }
 @media (max-width: $screen-sm-min) {
   .headline {
     margin:0 0 15px 0;
     font-size: 40px;
     line-height: 2em;
+    padding-top: 0;
+  }
+  .sign-up-container-left {
+    display: none
+  }
+  .sign-up-container-right {
+    min-height: 100px;
   }
 }
 .side-cat {

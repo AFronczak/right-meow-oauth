@@ -8,7 +8,7 @@ class CareProvidersController < ApplicationController
     @ip = request.remote_ip
     # @ip = "108.190.18.85"
 
-    geocoded = Geocoder.search(@ip).first
+    geocoded = Geocoder.search(@ip).last
     if geocoded
       @lat = geocoded.latitude
       @lng = geocoded.longitude
