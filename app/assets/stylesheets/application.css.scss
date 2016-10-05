@@ -39,14 +39,20 @@ $background-color: #2196f3;
   align-items: center;
 }
 .forms-margin {
-  margin: 50px 50px 0 50px;
+  margin: 15px 15px 0 15px;
 }
 
 .main {
   border: 5px solid lightblue;
   border-radius: 25px;
   background-color: white;
-  }
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 @media (max-width: $screen-md-min) {
   .top-icon {
     display: inline;
@@ -78,9 +84,9 @@ $background-color: #2196f3;
 @media (max-width: $screen-sm-min) {
   .headline {
     margin:0 0 15px 0;
-
+    font-size: 40px;
+    line-height: 2em;
   }
-
 }
 .side-cat {
   margin-top: 150px;
@@ -134,8 +140,19 @@ body {
   color: white;
   margin-top: 5px;
 }
-body.logged-in {
+
+.logged-in {
+  margin: 15px 0 10px 0;
+  padding: 0
 }
 
-body.logged-out {
+.edit-pets {
+  margin-top: 15px;
+}
+
+.user-edit-buttons {
+  margin: 0px 45px 15px 5px;
+}
+.app-bottom {
+  margin-bottom: 15px;
 }

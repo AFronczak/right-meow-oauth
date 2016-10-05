@@ -16,7 +16,7 @@ class CareProvidersController < ApplicationController
       @lat = 27.7723
       @lng = -82.6341
     end
-    @care_providers = current_user.care_providers.near([@lat, @lng], 50, {order: "distance"}).distinct
+    @care_providers = current_user.care_providers.near([@lat, @lng], 15, {order: "distance"}).distinct
   end
 
   # GET /care_providers/1

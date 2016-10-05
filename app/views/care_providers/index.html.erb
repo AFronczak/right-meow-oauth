@@ -3,7 +3,7 @@ $(document).ready(function() {
   var lat = <%= @lat %>;
   var lng = <%= @lng %>;
 
-  var map = L.map('map').setView([lat, lng], 10);
+  var map = L.map('map').setView([lat, lng], 12);
   map.scrollWheelZoom.disable();
   // map.once('focus', function() { map.scrollWheelZoom.enable(); });
 
@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 
 
-<div class="row">
+<div class="row app-bottom">
   <div class="col-lg-6">
     <div id="map"></div>
   </div>
@@ -56,19 +56,34 @@ $(document).ready(function() {
                   <h4 class="modal-title" id="myModalLabel"><%= provider.name %></h4>
                 </div>
                 <div class="modal-body">
-                  Website:
-                  <%= link_to provider.name, provider.website.html_safe %>
-                    <br>
-                  Phone:
-                  <%= provider.phone %>
-                    <br>
-                  Address:
-                  <%= provider.address%>
-                  <br>
-                  Specializations:
-                  <% provider.pet_types.uniq.each do |type| %>
-                    <%= image_tag("animals/svg/#{type.type_of_pet.tableize.singularize}.svg", size: 20) %>
-                  <% end %>
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      Website:
+                      <span class="pull-right">
+                        <%= link_to provider.name, provider.website.html_safe %>
+                      </span>
+                    </li>
+                    <li class="list-group-item">
+                      Phone:
+                      <span class="pull-right">
+                        <%= phone_number_link(provider.phone) %>
+                      </span>
+                    </li>
+                    <li class="list-group-item">
+                      Address:
+                      <span class="pull-right">
+                        <%= provider.address%>
+                      </span>
+                    </li>
+                    <li class="list-group-item">
+                      Specializations:
+                      <span class="pull-right">
+                        <% provider.pet_types.uniq.each do |type| %>
+                          <%= image_tag("animals/svg/#{type.type_of_pet.tableize.singularize}.svg", title: type.type_of_pet, size: 20) %>
+                        <% end %>
+                      </span>
+                    </li>
+                  </ul>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

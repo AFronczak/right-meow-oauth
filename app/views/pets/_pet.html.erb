@@ -1,6 +1,9 @@
-<li class="list-group-item col-lg-8">
-  <%=link_to '<i class="fa fa-times-circle" aria-hidden="true"></i>'.html_safe, pet_path(pet), :method => :delete, :data => { :confirm => 'Are you sure?'} %>
+<li class="list-group-item col-lg-8" id="pet-<%= pet.id %>">
+  <%= link_to '<i class="fa fa-times-circle" aria-hidden="true"></i>'.html_safe, pet_path(pet), :method => :delete, :remote => true, :data => { :confirm => 'Are you sure?'} %>
 
   <%= pet.name %></a>
-  <span class="pull-right"><%= pet.pet_type_name %></span>
+  <span class="pull-right">
+    <%= image_tag("animals/svg/#{pet.pet_type_name.tableize.singularize}.svg", title: pet.pet_type_name, size: 20) %>
+    <%= pet.pet_type_name %>
+  </span>
 </li>

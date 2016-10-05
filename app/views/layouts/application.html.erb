@@ -16,14 +16,15 @@
       <h1 class="headline">Right Meow!</h1>
     </div>
 
-    <div class="container-fluid">
-      <div class="row ">
-        <div class="col-md-10 col-md-offset-1 main">
+    <div class="container-fluid wrapper">
+        <div class="col-md-12 main">
           <% if logged_in? %>
-            <div class="logged-in">
-              Not
-              <%= link_to "#{current_user.name}", edit_user_path %>?
-              <%= link_to "Sign out", logout_path%>
+            <div class="page-header logged-in">
+              <h4>
+                Hello
+                <%= link_to "#{current_user.name}", edit_user_path %>
+                <span class="pull-right"><%= link_to "Sign out", logout_path%></span>
+              </h4>
             </div>
           <%end%>
           <%= yield %>
