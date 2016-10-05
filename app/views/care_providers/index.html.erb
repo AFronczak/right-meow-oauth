@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   <% current_user.care_providers.distinct.each do |provider| %>
     var marker = L.marker([<%= provider.latitude %>, <%= provider.longitude %>], {icon: myIcon}).addTo(map);
-    marker.bindPopup('<%= provider.name %><br/><%= link_to provider.website %><br/><%= provider.address %><br/><%= provider.phone %>');
+    marker.bindPopup('<%= provider.name %><br/><%= link_to provider.website, provider.website.html_safe %><br/><%= provider.address %><br/><%= provider.phone %>');
   <% end %>
 })
 </script>
@@ -57,7 +57,7 @@ $(document).ready(function() {
                 </div>
                 <div class="modal-body">
                   Website:
-                  <%= link_to provider.website %>
+                  <%= link_to provider.name, provider.website.html_safe %>
                     <br>
                   Phone:
                   <%= provider.phone %>
