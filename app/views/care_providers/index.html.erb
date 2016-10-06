@@ -52,8 +52,7 @@ $(document).ready(function() {
       <div class="panel-body">
         <ul class="list-group care-providers-list-group">
         <% @care_providers.each do |provider| %>
-          <li class="list-group-item">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#provider-<%= provider.id%>">Click</button>
+          <li class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>">
             <span class="list-group-provider-name"><%= provider.name %></span>
             <span class="badge"><%= number_with_precision(provider.distance, precision: 2) %> mi </span>
           </li>
