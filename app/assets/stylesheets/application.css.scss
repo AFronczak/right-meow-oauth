@@ -69,7 +69,7 @@ $background-color: #2196f3;
   margin: 0 auto;
 }
 
-@media (max-width: $screen-md-min) {  
+@media (max-width: $screen-md-min) {
   .care-providers-detail .pull-right {
     float: none !important;
   }
@@ -122,9 +122,9 @@ $background-color: #2196f3;
     line-height: 2em;
     padding-top: 0;
   }
-  .sign-up-container-left {
-    display: none
-  }
+  // .sign-up-container-left {
+  //   display: none
+  // }
   .sign-up-container-right {
     min-height: 100px;
   }

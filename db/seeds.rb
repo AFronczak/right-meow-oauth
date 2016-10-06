@@ -48,7 +48,18 @@ all_pet_care = CareProvider.create(name: "All Pet Care",
                     address: "1453 Sunset Point Rd, Clearwater, FL",
                     phone: "(727) 442-9111",
                     website: "http://allpetcare.com/")
-
+animal_hospital_of_pinellas_point = CareProvider.create(name: "Animal Hospital of Pinellas Point",
+                    address: "461 45th Ave S, St. Petersburg, FL 33705",
+                    phone: "(727) 895-8387",
+                    website: "http://animalhospitalofpinellaspoint.com/")
+bay_moorings_animal_hospital = CareProvider.create(name: "Bay Moorings Animal Hospital",
+                    address: "3695 50th Ave S, St. Petersburg, FL 33711",
+                    phone: "(727) 867-0118",
+                    website: "http://baymooringsanimalhospital.com/")
+avian_and_animal_hospital = CareProvider.create(name: "Avian and Animal Hospital",
+                    address: "11405 Starkey Rd, Largo, FL 33773",
+                    phone: "(727) 398-1928",
+                    website: "http://avianandanimal.com/")
 Specialization.create(care_provider: noah,
                       pet_type: feline)
 Specialization.create(care_provider: noah,
@@ -89,3 +100,19 @@ Specialization.create(care_provider: all_pet_care,
                       pet_type: feline)
 Specialization.create(care_provider: all_pet_care,
                       pet_type: canine)
+Specialization.create(care_provider: animal_hospital_of_pinellas_point,
+                      pet_type: canine)
+Specialization.create(care_provider: animal_hospital_of_pinellas_point,
+                      pet_type: feline)
+Specialization.create(care_provider: animal_hospital_of_pinellas_point,
+                      pet_type: avian)
+Specialization.create(care_provider: avian_and_animal_hospital,
+                      pet_type: feline)
+Specialization.create(care_provider: avian_and_animal_hospital,
+                      pet_type: canine)
+Specialization.create(care_provider: avian_and_animal_hospital,
+                      pet_type: avian)
+Specialization.create(care_provider: avian_and_animal_hospital,
+                      pet_type: exotic)
+Specialization.create(care_provider: avian_and_animal_hospital,
+                      pet_type: small_mammal)
