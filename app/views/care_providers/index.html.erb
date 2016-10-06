@@ -52,7 +52,8 @@ $(document).ready(function() {
       <div class="panel-body">
         <ul class="list-group care-providers-list-group">
         <% @care_providers.each do |provider| %>
-          <li class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>">
+          <li class="list-group-item">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#provider-<%= provider.id%>">Click</button>
             <span class="list-group-provider-name"><%= provider.name %></span>
             <span class="badge"><%= number_with_precision(provider.distance, precision: 2) %> mi </span>
           </li>
@@ -111,7 +112,7 @@ $(document).ready(function() {
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
