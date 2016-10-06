@@ -5,7 +5,7 @@ class CareProvidersController < ApplicationController
   # GET /care_providers.json
   def index
     @ip = request.remote_ip
-    @ip = "108.190.18.85"
+    # @ip = "108.190.18.85"
 
     geocoded = Geocoder.search(@ip).last
     if geocoded
