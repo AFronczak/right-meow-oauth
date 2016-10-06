@@ -33,7 +33,7 @@ $(document).ready(function() {
 
   <% current_user.care_providers.distinct.each do |provider| %>
     var marker = L.marker([<%= provider.latitude %>, <%= provider.longitude %>], {icon: myIcon}).addTo(map);
-    marker.bindPopup('<%= provider.name %><br/><%= link_to provider.website, provider.website.html_safe %><br/><%= provider.address %><br/><%= provider.phone %>');
+    marker.bindPopup('<%= provider.name %><br/><%= link_to provider.website, provider.website.html_safe %><br/><%= provider.address %><br/><%= phone_number_link(provider.phone) %>');
   <% end %>
 })
 </script>
@@ -50,14 +50,16 @@ $(document).ready(function() {
         <h3 class="panel-title">Nearby Providers</h3>
       </div>
       <div class="panel-body">
+        <ul class="list-group care-providers-list-group">
         <% @care_providers.each do |provider| %>
-          <a class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>">
+          <li class="list-group-item" data-toggle="modal" data-target="#provider-<%= provider.id%>">
             <span class="list-group-provider-name"><%= provider.name %></span>
             <span class="badge"><%= number_with_precision(provider.distance, precision: 2) %> mi </span>
-          </a>
+          </li>
+        <% end %>
+        </ul>
 
-
-
+        <% @care_providers.each do |provider| %>
           <div class="modal fade" id="provider-<%= provider.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
