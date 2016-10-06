@@ -69,7 +69,11 @@ $background-color: #2196f3;
   margin: 0 auto;
 }
 
-@media (max-width: $screen-md-min) {
+@media (max-width: $screen-md-min) {  
+  .care-providers-detail .pull-right {
+    float: none !important;
+  }
+
   .list-group-provider-name {
     display: inline-block;
     width: 60%;
