@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Right Meow
 
-Things you may want to cover:
+![alt tag]
+(https://github.com/AFronczak/right-meow-oauth/tree/master/app/assets/images/rightmeow.png/)
 
-* Ruby version
 
-* System dependencies
+This is the final project for The Iron Yard. My idea for this project came from being a pet owner and trying to find care for different kinds of animals.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ruby 2.3.1
+rails 5.0.0.1
