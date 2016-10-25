@@ -1,7 +1,7 @@
 #Right Meow
 
-![alt text]
-(https://github.com/AFronczak/right-meow-oauth/tree/master/app/assets/images/rightmeow.png "Right Meow")
+![Screenshot]
+(https://github.com/AFronczak/right-meow-oauth/blob/master/app/assets/images/rightmeow.png "Right Meow")
 
 ###[View Site](http://rightmeow.site/)
 
